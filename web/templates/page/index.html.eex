@@ -1,0 +1,16 @@
+<%= if is_nil @movie do %>
+  <h2 class="text-center">
+    No Movies with title "<%= @query %>"
+  </h2>
+<% else %>
+  <h2 class="text-center">
+    <%= Map.get(@movie, :Title) %> - <span><%= Map.get(@movie, :Year) %></span>
+  </h2>
+
+  <section id=<%= Map.get(@movie, :imdbID) %> class="text-center">
+    <main>
+      <img src="<%= Map.get(@movie, :Poster) %>">
+      <p><%= Map.get(@movie, :Plot) %></p>
+    </main>
+  </section>
+<% end %>
