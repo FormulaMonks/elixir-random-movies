@@ -7,6 +7,8 @@
     <%= Map.get(@movie, :Title) %> - <span><%= Map.get(@movie, :Year) %></span>
   </h2>
 
+  <h3 class="text-center"> <%= Map.get(@movie, :Director) %> </h3>
+
   <section id=<%= Map.get(@movie, :imdbID) %> class="text-center">
     <main>
       <img src="<%= Map.get(@movie, :Poster) %>">
