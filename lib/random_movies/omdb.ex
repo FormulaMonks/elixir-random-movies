@@ -1,6 +1,4 @@
 defmodule RandomMovies.Omdb do
-  alias RandomMovies.Movie, as: Movie
-
   @user_agent [ {"User-agent", "Elixir"} ]
 
   def fetch(title) do
@@ -27,8 +25,6 @@ defmodule RandomMovies.Omdb do
   end
 
   defp decode_as_movie(body) do
-    keys = Map.keys Movie.__struct__
-
-    Poison.decode(body, as: Movie, keys: keys)
+    Poison.decode body, as: RandomMovies.Movie
   end
 end
